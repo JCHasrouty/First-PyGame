@@ -1,6 +1,6 @@
 # First-PyGame
 
-Creating my first Pygame. It will begin as a rectangle that is able to jump then progressively advance into sprites/ccharacters.
+Creating my first Pygame. Main character is Billy The Goat and he is able to shoot bullets. Enemies are in the process of being implemented. 
 
 ## Notes
 
