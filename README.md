@@ -8,8 +8,8 @@ Game is still in development and will continue to have features being added and 
 
 ## Built With
 
-* [Python](https://www.python.org/)
-* [PyGame](https://www.pygame.org/news)
+* [Python](https://www.python.org/) - The programming language used
+* [PyGame](https://www.pygame.org/news) - Python Modules/Libraries
 
 ## Authors
 * Jean Claude Hasrouty - *Programmer*
