@@ -6,7 +6,8 @@ Creating my first Pygame. Main character is Billy The Goat and he is able to sho
 
 ## Notes
 
-Game is still in development and will continue to have features being added and improved. 
+- Game is still in development and will continue to have features being added and improved. 
+- Code is in the process of being cleaned and optimized.
 
 ## Built With
 
