@@ -162,6 +162,7 @@ def redrawGameWindow():
     win.blit(text, (350, 10))
     BillyTheGoat.draw(win)
     Cody.draw(win)
+    Cody2.draw(win)
     for bullet in bullets:
         bullet.draw(win)
     pygame.display.update()
@@ -170,6 +171,7 @@ def redrawGameWindow():
 font = pygame.font.SysFont('comicsans', 30, True)
 BillyTheGoat = player(300, 410, 64, 64)
 Cody = enemy(100, 410, 64, 64, 450)
+Cody2 = enemy(200, 410, 64, 64, 450)
 shootLoop = 0
 bullets = []
 run = True
@@ -181,7 +183,13 @@ while run:
             if BillyTheGoat.hitbox[0] + BillyTheGoat.hitbox[2] > Cody.hitbox[0] and BillyTheGoat.hitbox[0] < Cody.hitbox[0] + Cody.hitbox[2]:
                 BillyTheGoat.hit()
                 score -= 5
-
+    
+    if Cody2.visible == True:
+        # check if player and character collided then reduce player health 
+        if BillyTheGoat.hitbox[1] < Cody2.hitbox[1] + Cody2.hitbox[3] and BillyTheGoat.hitbox[1] + BillyTheGoat.hitbox[3] > Cody2.hitbox[1]:
+            if BillyTheGoat.hitbox[0] + BillyTheGoat.hitbox[2] > Cody2.hitbox[0] and BillyTheGoat.hitbox[0] < Cody2.hitbox[0] + Cody2.hitbox[2]:
+                BillyTheGoat.hit()
+                score -= 5
     # bullet shooting cooldown
     if shootLoop > 0:
         shootLoop += 1
@@ -200,7 +208,13 @@ while run:
                 Cody.hit()
                 score += 1
                 bullets.pop(bullets.index(bullet))
-                
+        if bullet.y - bullet.radius < Cody2.hitbox[1] + Cody2.hitbox[3] and bullet.y + bullet.radius > Cody2.hitbox[1]:
+            # check if bullet is between left and right sides of the hitbox
+            if bullet.x + bullet.radius > Cody2.hitbox[0] and bullet.x - bullet.radius < Cody2.hitbox[0] + Cody2.hitbox[2]:
+                #hitSound.play()
+                Cody2.hit()
+                score += 1
+                bullets.pop(bullets.index(bullet))        
         if bullet.x < 500 and bullet.x > 0:
             bullet.x += bullet.vel
         else:
