@@ -1,7 +1,7 @@
 # First-PyGame
 
 Creating my first Pygame. Main character is Billy The Goat and he is able to shoot bullets. Cody is the enemy (with a twin) and is trying to kill Billy. Below you can see the current functionality of the game.
-
+![alt text](https://github.com/JCHasrouty/First-PyGame/blob/master/first_game.gif)
 
 
 ## Notes
